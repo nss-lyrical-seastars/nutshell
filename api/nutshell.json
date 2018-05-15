@@ -1,36 +1,42 @@
 {
     "Users": [
         {
-            "userId": "johnsmccoy",
-            "username": "john mccoy",
-            "email": "johnsmccoy@comcast.net"
-        }],
+            "userId": ,
+            "username": ,
+            "email":
+        },
+
+    ],
 
     "Messages": [
         {
-            "messageId": "Hedgehog",
-            "userId": true,
-            "message": "Brown"
+            "messageId":,
+            "userId": ,
+            "message":
         }],
+
     "News": [
         {
-            "newsId": "Hedgehog",
-            "userId": true,
-            "url": "Brown",
-            "title": "title",
-            "synopsis": "check out recent discovery" 
+            "newsId": ,
+            "userId": ,
+            "url": ,
+            "title": ,
+            "synopsis":,
+            "timeStamp": 
         }],
+
     "Friends": [
         {
-            "connectionId": "Hedgehog",
-            "userId": true,
-            "friendId": "Brown"
+            "connectionId": ,
+            "userId": ,
+            "friendId":
         }],
+
     "Tasks": [
         {
-            "taskid": "Hedgehog",
-            "userId": true,
-            "task": "Brown"
+            "taskid": ,
+            "userId": ,
+            "task":
         }
     ]}
     
