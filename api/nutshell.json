@@ -1,0 +1,42 @@
+{
+    "Users": [
+        {
+            "userId": ,
+            "username": ,
+            "email":
+        },
+
+    ],
+
+    "Messages": [
+        {
+            "messageId":,
+            "userId": ,
+            "message":
+        }],
+
+    "News": [
+        {
+            "newsId": ,
+            "userId": ,
+            "url": ,
+            "title": ,
+            "synopsis":,
+            "timeStamp": 
+        }],
+
+    "Friends": [
+        {
+            "connectionId": ,
+            "userId": ,
+            "friendId":
+        }],
+
+    "Tasks": [
+        {
+            "taskid": ,
+            "userId": ,
+            "task":
+        }
+    ]}
+    
