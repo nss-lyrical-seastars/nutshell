@@ -1,0 +1,36 @@
+{
+    "Users": [
+        {
+            "userId": "johnsmccoy",
+            "username": "john mccoy",
+            "email": "johnsmccoy@comcast.net"
+        }],
+
+    "Messages": [
+        {
+            "messageId": "Hedgehog",
+            "userId": true,
+            "message": "Brown"
+        }],
+    "News": [
+        {
+            "newsId": "Hedgehog",
+            "userId": true,
+            "url": "Brown",
+            "title": "title",
+            "synopsis": "check out recent discovery" 
+        }],
+    "Friends": [
+        {
+            "connectionId": "Hedgehog",
+            "userId": true,
+            "friendId": "Brown"
+        }],
+    "Tasks": [
+        {
+            "taskid": "Hedgehog",
+            "userId": true,
+            "task": "Brown"
+        }
+    ]}
+    
