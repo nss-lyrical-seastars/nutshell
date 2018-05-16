@@ -3,19 +3,19 @@ const $ = require("jquery")
 const tasksManager = Object.create(null, {
 
     // get all tasks
-    getAlltasks: {
+    getAllTasks: {
         value: function () {
             return $.ajax("http://localhost:8088/tasks")
         }
     },
     // get single task
-    getSingletasks: {
+    getSingleTasks: {
         value: function (id) {
             return $.ajax(`http://localhost:8088/tasks/${id}`)
         }
     },
     // post (create) task
-    createtasks: {
+    createTasks: {
         value: function (tasks) {
             return $.ajax({
                 url: "http://localhost:8088/tasks",
@@ -25,7 +25,7 @@ const tasksManager = Object.create(null, {
         }
     },
     // delete task
-    deletetasks: {
+    deleteTasks: {
         value: function (id) {
             return $.ajax({
                 url: `http://localhost:8088/tasks/${id}`,
@@ -34,7 +34,7 @@ const tasksManager = Object.create(null, {
         }
     },
     //  put (update) user
-    updatetasks: {
+    updateTasks: {
         value: function (tasks) {
             return $.ajax({
                 url: `http://localhost:8088/tasks/${tasks.id}`,
