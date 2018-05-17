@@ -19,7 +19,7 @@ const createTaskName = document.createElement("input");
 createTaskName.type = "text"
 // createTaskName placeholder
 createTaskName.placeholder = " Name of Task"
-// append to  div
+// append to div
 fragment.appendChild(createTaskName)
 
 

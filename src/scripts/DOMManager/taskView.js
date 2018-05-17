@@ -30,7 +30,7 @@ const taskList = function(){
             const li = document.createElement("li")
 
             //append task checkbox and task
-            $(li).append("<input type='checkbox' name='complete', value='false'>" + " " + task.task)
+            $(li).append("<input type='checkbox' name='complete', value='false'>" + "  <a href='#'>" + task.task + "</a>")
             ul.appendChild(li)
 
         });
