@@ -19,14 +19,16 @@ const taskList = function(){
 
         //loop thru all tasks in database, and for each task...
         allTasks.forEach(task => {
-            console.log(task)
-            $("").append(
-                ""
-            )
+
+            //create a list element and...
+            const li = document.createElement("li")
+
+            //append task checkbox and task
+            $(li).append("<input type='checkbox'>"+ " " + task.task)
+            ul.appendChild(li)
         });
 
     })
-
 
 }
 
