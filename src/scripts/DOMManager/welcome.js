@@ -1,57 +1,63 @@
 const fragment = document.createDocumentFragment();
+const $ = require("jquery");
 
-const welcomePage = function () {
-    // create element
-    const welcomeLogo = document.createElement("h1");
-    // logo H1
-    welcomeLogo.textContent = "Lyrical Seastars Welcome";
-    // append to fragment
-    fragment.appendChild(welcomeLogo)
+$(document).ready(function() {
+    $("#mainPage").hide();
+});
 
-    // e-mail input
-    const userEmail = document.createElement("input");
-    userEmail.type = "text"
-    // e-mail placeholder
-    userEmail.placeholder = "E-mail"
-    // append to  div
-    fragment.appendChild(userEmail)
+const welcomePage = function() {
+// create element
+const welcomeLogo = document.createElement("h1");
+// logo H1
+welcomeLogo.textContent = "Lyrical Seastars Welcome";
+// append to fragment
+fragment.appendChild(welcomeLogo)
 
-    // username input
-    const userName = document.createElement("input");
-    userName.type = "text"
-    // username placeholder
-    userName.placeholder = "User Name"
-    // append to  div
-    fragment.appendChild(userName)
+// e-mail input
+const userEmail = document.createElement("input");
+userEmail.type = "text"
+// e-mail placeholder
+userEmail.placeholder = "E-mail"
+// append to  div
+fragment.appendChild(userEmail)
 
-    // submit Button
-    const logIn = document.createElement("button");
-    logIn.type = "button"
-    // Button Text
-    logIn.textContent = "Log In"
-    logIn.addEventListener("click", function (event) {
-        console.log(event);
-    });
+// username input
+const userName = document.createElement("input");
+userName.type = "text"
+// username placeholder
+userName.placeholder = "User Name"
+// append to  div
+fragment.appendChild(userName)
 
-    // append to div
-    fragment.appendChild(logIn)
+// submit Button
+const logIn = document.createElement("button");
+logIn.type = "button"
+// Button Text
+logIn.textContent = "Log In"
+logIn.onclick = function () {
+    $("#welcomePage").hide();
+    $("#mainPage").show();
+};
 
-    // register Button
-    const register = document.createElement("button");
-    register.type = "button"
-    // Button Text
-    register.textContent = "Register Here"
-    register.onclick = function (event) {
-        console.log(event);
-    };
+// append to div
+fragment.appendChild(logIn)
 
-    // append to div
-    fragment.appendChild(register)
-    // append to div
+// register Button
+const register = document.createElement("button");
+register.type = "button"
+// Button Text
+register.textContent = "Register Here"
+register.onclick = function () {
+    $("#welcomePage").hide();
+    $("#mainPage").show();
+};
 
-    const welcomeDiv = document.getElementById("welcomePage");
-    welcomeDiv.appendChild(fragment)
+// append to div
+fragment.appendChild(register)
+// append to div
 
+const welcomeDiv = document.getElementById("welcomePage");
+welcomeDiv.appendChild(fragment)
 };
 
 module.exports = welcomePage
