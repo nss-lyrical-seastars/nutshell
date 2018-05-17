@@ -1,6 +1,6 @@
 // create task view.
 
-
+const createTask = function(){
 // fragment puts info to the DOM
 const fragment = document.createDocumentFragment();
 
@@ -44,3 +44,6 @@ fragment.appendChild(submit)
 // Appending the fragment to divTasks. Then appending divTasks to the div called tasks in the index.html
 const divTasks = document.getElementById("createTasks");
 divTasks.appendChild(fragment)
+}
+
+module.exports = createTask
