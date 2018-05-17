@@ -1,4 +1,9 @@
 const fragment = document.createDocumentFragment();
+const $ = require("jquery");
+
+$(document).ready(function() {
+    $("#mainPage").hide();
+});
 
 const welcomePage = function() {
 // create element
@@ -29,9 +34,10 @@ const logIn = document.createElement("button");
 logIn.type = "button"
 // Button Text
 logIn.textContent = "Log In"
-logIn.addEventListener("click", function (event) {
-    console.log(event);
-});
+logIn.onclick = function () {
+    $("#welcomePage").hide();
+    $("#mainPage").show();
+};
 
 // append to div
 fragment.appendChild(logIn)
@@ -41,8 +47,9 @@ const register = document.createElement("button");
 register.type = "button"
 // Button Text
 register.textContent = "Register Here"
-register.onclick = function (event) {
-    console.log(event);
+register.onclick = function () {
+    $("#welcomePage").hide();
+    $("#mainPage").show();
 };
 
 // append to div
@@ -51,7 +58,6 @@ fragment.appendChild(register)
 
 const welcomeDiv = document.getElementById("welcomePage");
 welcomeDiv.appendChild(fragment)
-
 };
 
 module.exports = welcomePage
