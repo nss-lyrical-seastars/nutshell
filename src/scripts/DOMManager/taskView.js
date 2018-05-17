@@ -8,11 +8,11 @@ const taskList = function(){
     //Get the element with the id "tasks"
     const parentEl = document.getElementById("tasks")
 
-    //Create a button for submitting a new task
-    const createTask = document.createElement("button")
+    //Create a button for submitting a newtask
+    const newTaskBtn = document.createElement("button")
 
-    createTask.textContent = "New Task"
-    parentEl.appendChild(createTask)
+    newTaskBtn.textContent = "New Task"
+    parentEl.appendChild(newTaskBtn)
 
     //Create an unordered list element
     const ul = document.createElement("ul")
@@ -25,13 +25,14 @@ const taskList = function(){
 
         //loop thru all tasks in database, and for each task...
         allTasks.forEach(task => {
-
+            console.log(task)
             //create a list element and...
             const li = document.createElement("li")
 
             //append task checkbox and task
-            $(li).append("<input type='checkbox'>" + " " + task.task)
+            $(li).append("<input type='checkbox' name='complete', value='false'>" + " " + task.task)
             ul.appendChild(li)
+
         });
 
     })
