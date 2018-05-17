@@ -8,6 +8,12 @@ const taskList = function(){
     //Get the element with the id "tasks"
     const parentEl = document.getElementById("tasks")
 
+    //Create a button for submitting a new task
+    const createTask = document.createElement("button")
+
+    createTask.textContent = "New Task"
+    parentEl.appendChild(createTask)
+
     //Create an unordered list element
     const ul = document.createElement("ul")
 
@@ -24,7 +30,7 @@ const taskList = function(){
             const li = document.createElement("li")
 
             //append task checkbox and task
-            $(li).append("<input type='checkbox'>"+ " " + task.task)
+            $(li).append("<input type='checkbox'>" + " " + task.task)
             ul.appendChild(li)
         });
 
