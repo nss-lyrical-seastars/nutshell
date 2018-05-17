@@ -102,17 +102,20 @@
         {
             "id": 1,
             "userId": 1,
-            "task":"clean out sink in the snackery."
+            "task":"clean out sink in the snackery.",
+            "complete": false
         },
         {
             "id": 2,
             "userId": 3,
-            "task":"return the desks into classroom."
+            "task":"return the desks into classroom.",
+            "complete": false
         },
         {
             "id": 3,
             "userId": 5,
-            "task":"erase the board in the hackery."
+            "task":"erase the board in the hackery.",
+            "complete": false
         }
 
     ]}
