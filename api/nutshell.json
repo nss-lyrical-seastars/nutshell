@@ -1,121 +1,145 @@
 {
-    "Users": [
-        {
-            "id": 1,
-            "username": "Jessica",
-            "email": "Jessica@gmail.com"
-        },
-        {
-            "id": 2,
-            "username": "Matt",
-            "email": "Matt@gmail.com"
-        },
-        {
-            "id": 3,
-            "username": "Dejan",
-            "email":"Dejan@gmail.com"
-        },
-        {
-            "id": 4,
-            "username": "Erin",
-            "email": "Erin@gmail.com"
-        },
-        {
-            "id": 5,
-            "username": "John",
-            "email": "John@gmail.com"
-        }
-
-    ],
-
-    "Messages": [
-        {
-            "id": 1,
-            "userId": 2,
-            "message":"Do chicken tenders taste good?"
-        },
-        {
-            "id": 2,
-            "userId": 4,
-            "message":"I guess so. They are kind of mushy."
-        },
-        {
-            "id": 3,
-            "userId": 1,
-            "message":"I don't eat chicken anymore. Cute little chickens."
-        }
-
-    ],
-
-    "News": [
-        {
-            "id": 1,
-            "userId": 3,
-            "url": "https://www.huffingtonpost.com/entry/american-airlines-banned-support-animals_us_5afacf94e4b09a94524c0933",
-            "title": "Your Emotional Support Spider And Goat Are Now Banned On American Airlines",
-            "synopsis":"They are banning support animals frim American Airlines",
-            "timeStamp": 1301090400
-        },
-        {
-            "id": 2,
-            "userId": 1,
-            "url": "https://www.independent.co.uk/news/science/pigeons-extinction-passenger-numbers-world-why-so-terrifying-a8059311.html",
-            "title": "How a species of pigeon went from five billion to zero and why it's so terrifying",
-            "synopsis":"Pigeon population decline in the history of the modern world",
-            "timeStamp": 1301090412
-        },
-        {
-            "id": 3,
-            "userId": 5,
-            "url": "https://sports.theonion.com/mark-mcgwire-claims-he-would-have-hit-70-home-runs-with-1825894894",
-            "title": "Mark McGwire Claims He Would Have Hit 70 Home Runs Without Help Of Bat",
-            "synopsis":"Mark McGwire doesn't need a bat. All he needs is top notch steriods",
-            "timeStamp": 1301090454
-        }
-    ],
-
-    "Friends": [
-        {
-            "id": 1,
-            "userId": 1,
-            "friendId":2
-        },
-        {
-            "id": 2,
-            "userId": 1,
-            "friendId":3
-        },
-        {
-            "id": 3,
-            "userId": 1,
-            "friendId": 4
-        },
-        {
-            "id": 4,
-            "userId": 1,
-            "friendId":5
-        }
-
-    ],
-
-    "Tasks": [
-        {
-            "id": 1,
-            "userId": 1,
-            "task":"clean out sink in the snackery.",
-            "complete": false
-        },
-        {
-            "id": 2,
-            "userId": 3,
-            "task":"return the desks into classroom.",
-            "complete": false
-        },
-        {
-            "id": 3,
-            "userId": 5,
-            "task":"erase the board in the hackery.",
-            "complete": false
-        }
-
-    ]}
+  "Users": [
+    {
+      "id": 1,
+      "username": "Jessica",
+      "email": "Jessica@gmail.com"
+    },
+    {
+      "id": 2,
+      "username": "Matt",
+      "email": "Matt@gmail.com"
+    },
+    {
+      "id": 3,
+      "username": "Dejan",
+      "email": "Dejan@gmail.com"
+    },
+    {
+      "id": 4,
+      "username": "Erin",
+      "email": "Erin@gmail.com"
+    },
+    {
+      "id": 5,
+      "username": "John",
+      "email": "John@gmail.com"
+    }
+  ],
+  "Messages": [
+    {
+      "id": 1,
+      "userId": 2,
+      "message": "Do chicken tenders taste good?"
+    },
+    {
+      "id": 2,
+      "userId": 4,
+      "message": "I guess so. They are kind of mushy."
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "message": "I don't eat chicken anymore. Cute little chickens."
+    }
+  ],
+  "News": [
+    {
+      "id": 1,
+      "userId": 3,
+      "url": "https://www.huffingtonpost.com/entry/american-airlines-banned-support-animals_us_5afacf94e4b09a94524c0933",
+      "title": "Your Emotional Support Spider And Goat Are Now Banned On American Airlines",
+      "synopsis": "They are banning support animals frim American Airlines",
+      "timeStamp": 1301090400
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "url": "https://www.independent.co.uk/news/science/pigeons-extinction-passenger-numbers-world-why-so-terrifying-a8059311.html",
+      "title": "How a species of pigeon went from five billion to zero and why it's so terrifying",
+      "synopsis": "Pigeon population decline in the history of the modern world",
+      "timeStamp": 1301090412
+    },
+    {
+      "id": 3,
+      "userId": 5,
+      "url": "https://sports.theonion.com/mark-mcgwire-claims-he-would-have-hit-70-home-runs-with-1825894894",
+      "title": "Mark McGwire Claims He Would Have Hit 70 Home Runs Without Help Of Bat",
+      "synopsis": "Mark McGwire doesn't need a bat. All he needs is top notch steriods",
+      "timeStamp": 1301090454
+    }
+  ],
+  "Friends": [
+    {
+      "id": 1,
+      "userId": 1,
+      "friendId": 2
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "friendId": 3
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "friendId": 4
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "friendId": 5
+    }
+  ],
+  "Tasks": [
+    {
+      "id": 1,
+      "userId": 1,
+      "task": "clean out sink in the snackery.",
+      "exCompleteDate": "",
+      "complete": false
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "task": "return the desks into classroom.",
+      "exCompleteDate": "",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "userId": 5,
+      "task": "erase the board in the hackery.",
+      "exCompleteDate": "",
+      "complete": false
+    },
+    {
+      "userId": "5",
+      "task": "ljfljfljsadfkljdsa",
+      "exCompleteDate": "2018-05-31",
+      "complete": "false",
+      "id": 4
+    },
+    {
+      "userId": "5",
+      "task": "ljfljfljsadfkljdsa",
+      "exCompleteDate": "2018-05-31",
+      "complete": "false",
+      "id": 5
+    },
+    {
+      "userId": "5",
+      "task": "",
+      "exCompleteDate": "",
+      "complete": "false",
+      "id": 6
+    },
+    {
+      "userId": "5",
+      "task": "jljfsjlfjsklfjdlks",
+      "exCompleteDate": "2018-05-31",
+      "complete": "false",
+      "id": 7
+    }
+  ]
+}
