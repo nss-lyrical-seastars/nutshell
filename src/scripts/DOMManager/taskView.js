@@ -2,6 +2,7 @@
 //Author:  Erin Agobert
 const $ = require("jquery")
 const taskManager = require("../APIManager/tasksManager")
+const createTask = require("../DOMManager/createTask")
 
 const taskList = function(){
 
@@ -13,6 +14,13 @@ const taskList = function(){
 
     newTaskBtn.textContent = "New Task"
     parentEl.appendChild(newTaskBtn)
+
+    //On button click the create task form opens
+    $(newTaskBtn).on("click", function(event){
+        console.log(event.currentTarget)
+        $(parentEl).empty()
+        createTask()
+    })
 
     //Create an unordered list element
     const ul = document.createElement("ul")
@@ -30,7 +38,7 @@ const taskList = function(){
             const li = document.createElement("li")
 
             //append task checkbox and task
-            $(li).append("<input type='checkbox' name='complete', value='false'>" + " " + task.task)
+            $(li).append("<input type='checkbox' name='complete', value='false'>" + "  <a href='#'>" + task.task + "</a>")
             ul.appendChild(li)
 
         });
