@@ -37,11 +37,14 @@ const taskList = function(){
             //create a list element and...
             const li = document.createElement("li")
 
-            //append task checkbox and task
-            $(li).append("<input type='checkbox' name='complete', value='false'>" + "  <a href='#'>" + task.task + "</a>")
+            //append task checkbox, task, and est completion date
+            $(li).append("<input type='checkbox' name='complete', value='false'>" + "  <a href='#'>" + task.task + "</a>" + task.estCompleteDate)
+
             ul.appendChild(li)
 
         });
+
+        //Create event handler to change input from "unchecked to "checked"
 
     })
 
