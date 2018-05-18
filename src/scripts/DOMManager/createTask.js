@@ -1,4 +1,8 @@
-// create task view.
+// Purpose create task view.
+// Authors: Dejan Stjepanovic, Erin Agobert
+const taskManager = require("../APIManager/tasksManager")
+
+
 
 const createTask = function(){
 // fragment puts info to the DOM
@@ -37,6 +41,21 @@ submit.type = "button"
 submit.textContent = "Submit Task"
 submit.onclick = function (event) {
     console.log(event)
+
+    const task = {
+
+         "userId": 5,
+         "task":createTaskName.value,
+         "exCompleteDate": createTaskDate.value,
+         "complete": false
+    }
+
+    taskManager.createTasks(task)
+
+    const taskList = require("../DOMManager/taskView")
+    //Return to main page on submit
+    $("#createTasks").empty()
+        taskList()
 }
 fragment.appendChild(submit)
 
