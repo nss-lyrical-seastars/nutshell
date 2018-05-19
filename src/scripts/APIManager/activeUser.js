@@ -14,10 +14,11 @@ const activeUser = Object.create(null, {
     "saveActiveUser": {
         value: (user) => {
              //note the need below to JSON.stringify the item we get from session storage.  The method doesn't call for it so if data isn't showing correctly try removing.
-            sessionStorage.setItem("ActiveUser", {
-                "username": user.username,
-                "email": user.email
-            })
+            sessionStorage.setItem("ActiveUser", JSON.stringify({
+                    "id": user.id,
+                    "username": user.username,
+                    "email": user.email
+                }))
         }
     },
     //remove user from session storage

@@ -1,6 +1,7 @@
 const fragment = document.createDocumentFragment();
 const $ = require("jquery");
 const userManager = require("../APIManager/userManager")
+const storage = require("../APIManager/activeUser")
 
 $(document).ready(function() {
     $("#mainPage").hide();
@@ -40,13 +41,15 @@ logIn.onclick = function () {
     const existingUser = userManager.getAllUsers().then(allUsers => {
         allUsers.forEach(user => {
             if(user.username === userName.value && user.email === userEmail.value) {
-
+                storage.saveActiveUser(user)
                 console.log(user)
             }
         });
     })
-    $("#welcomePage").hide();
-    $("#mainPage").show();
+    if(existingUser){
+        $("#welcomePage").hide();
+        $("#mainPage").show();
+    }
 };
 
 // append to div
