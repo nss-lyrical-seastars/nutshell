@@ -37,8 +37,13 @@ logIn.type = "button"
 logIn.textContent = "Log In"
 
 logIn.onclick = function () {
-    userManager.getAllUsers().then(users => {
-        console.log(users)
+    const existingUser = userManager.getAllUsers().then(allUsers => {
+        allUsers.forEach(user => {
+            if(user.username === userName.value && user.email === userEmail.value) {
+
+                console.log(user)
+            }
+        });
     })
     $("#welcomePage").hide();
     $("#mainPage").show();
