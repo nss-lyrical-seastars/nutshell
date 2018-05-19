@@ -34,16 +34,36 @@ const taskList = function(){
         //loop thru all tasks in database, and for each task...
         allTasks.forEach(task => {
             console.log(task)
+
             //create a list element and...
             const li = document.createElement("li")
 
-            //append task checkbox, task, and est completion date
-            $(li).append("<input type='checkbox' name='complete', value='false'>" + "  <a href='#'>" + task.task + "</a>" + task.estCompleteDate)
+            const input = document.createElement("input")
+            input.type = "checkbox"
+
+            li.appendChild(input)
+
+            const a = document.createElement("a")
+            a.href = "#"
+            a.id = `${task.id}`
+            a.textContent =" " + task.task
+
+            li.appendChild(a)
+            li.append(" " + task.estCompleteDate)
+
+            const taskDate = task.estCompleteDate
 
             ul.appendChild(li)
 
         });
 
+    //Create event handler to edit task
+    $("a").on("click", function(event){
+        console.log(event.currentTarget.id)
+        taskManager.getSingleTasks(event.currentTarget.id)
+        $(parentEl).empty()
+        createTask(event.currentTarget.id)
+    })
         //Create event handler to change input from "unchecked to "checked"
 
     })

@@ -1,5 +1,6 @@
 const fragment = document.createDocumentFragment();
 const $ = require("jquery");
+const userManager = require("../APIManager/userManager")
 
 $(document).ready(function() {
     $("#mainPage").hide();
@@ -34,7 +35,11 @@ const logIn = document.createElement("button");
 logIn.type = "button"
 // Button Text
 logIn.textContent = "Log In"
+
 logIn.onclick = function () {
+    userManager.getAllUsers().then(users => {
+        console.log(users)
+    })
     $("#welcomePage").hide();
     $("#mainPage").show();
 };
