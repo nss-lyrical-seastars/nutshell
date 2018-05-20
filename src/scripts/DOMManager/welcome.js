@@ -2,7 +2,7 @@ const fragment = document.createDocumentFragment();
 const usersManager = require("../APIManager/userManager");
 const $ = require("jquery");
 const userManager = require("../APIManager/userManager")
-const storage = require("../APIManager/activeUser")
+const session = require("../APIManager/activeUser")
 
 $(document).ready(function () {
     $("#mainPage").hide();
@@ -52,6 +52,8 @@ const welcomePage = function () {
                     userAuthenticated = true;
                     $("#welcomePage").hide();
                     $("#mainPage").show();
+                    session.saveActiveUser(user);
+                    console.log(user)
                 }
             })
             // Flag variable is still false if there was no match
