@@ -3,12 +3,13 @@ const $ = require("jquery");
 const userManager = require("../APIManager/userManager")
 const storage = require("../APIManager/activeUser")
 
-$(document).ready(function() {
-    $("#mainPage").hide();
-
-});
 
 const welcomePage = function() {
+
+    $(document).ready(function() {
+        $("#mainPage").hide();
+    });
+
 // create element
 const welcomeLogo = document.createElement("h1");
 // logo H1
@@ -59,6 +60,7 @@ fragment.appendChild(logIn)
 // register Button
 const register = document.createElement("button");
 register.type = "button"
+
 // Button Text
 register.textContent = "Register Here"
 register.onclick = function () {

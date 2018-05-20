@@ -35,8 +35,10 @@ const taskList = function(){
     //Get all tasks in the database then....
     taskManager.getAllTasks().then(allTasks => {
 
+        //Clear any active users in session storage
+        session.clearActiveUser("ActiveUser");
         //Get active User
-        let data = session.getActiveUser("ActiveUser")
+         data = session.getActiveUser("ActiveUser")
         console.log(data)
         //loop thru all tasks in database, and for each task...
         allTasks.forEach(task => {
@@ -61,11 +63,11 @@ const taskList = function(){
             const taskDate = task.estCompleteDate
 
             }
-            if (data.id !== task.userId){
+        //     if (data.id !== task.userId){
 
-            //create a list element and...
-            li.textContent = "You have no tasks"
-        }
+        //     //create a list element and...
+        //     li.textContent = "You have no tasks"
+        // }
 
         ul.appendChild(li)
 
