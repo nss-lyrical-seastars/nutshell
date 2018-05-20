@@ -3,13 +3,12 @@ const $ = require("jquery");
 const userManager = require("../APIManager/userManager")
 const storage = require("../APIManager/activeUser")
 
+// $(document).ready(function() {
+// });
 
 const welcomePage = function() {
 
-    $(document).ready(function() {
-        $("#mainPage").hide();
-    });
-
+    $("#mainPage").hide();
 // create element
 const welcomeLogo = document.createElement("h1");
 // logo H1

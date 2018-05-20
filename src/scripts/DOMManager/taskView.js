@@ -36,10 +36,12 @@ const taskList = function(){
     taskManager.getAllTasks().then(allTasks => {
 
         //Clear any active users in session storage
-        session.clearActiveUser("ActiveUser");
+        //session.clearActiveUser("ActiveUser");
+
         //Get active User
          data = session.getActiveUser("ActiveUser")
         console.log(data)
+
         //loop thru all tasks in database, and for each task...
         allTasks.forEach(task => {
 
