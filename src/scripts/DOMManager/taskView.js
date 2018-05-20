@@ -3,6 +3,7 @@
 const $ = require("jquery")
 const taskManager = require("../APIManager/tasksManager")
 const createTask = require("../DOMManager/createTask")
+const session = require("../APIManager/activeUser")
 
 const taskList = function(){
 
@@ -28,15 +29,21 @@ const taskList = function(){
     //Append the ul element to the parent element with the id "tasks"
     parentEl.appendChild(ul)
 
+    //create a list element and...
+    const li = document.createElement("li")
+
     //Get all tasks in the database then....
     taskManager.getAllTasks().then(allTasks => {
 
+        //Get active User
+        let data = session.getActiveUser("ActiveUser")
+        console.log(data)
         //loop thru all tasks in database, and for each task...
         allTasks.forEach(task => {
-            console.log(task)
 
-            //create a list element and...
-            const li = document.createElement("li")
+
+            if (data.id === task.userId){
+
 
             const input = document.createElement("input")
             input.type = "checkbox"
@@ -53,7 +60,14 @@ const taskList = function(){
 
             const taskDate = task.estCompleteDate
 
-            ul.appendChild(li)
+            }
+            if (data.id !== task.userId){
+
+            //create a list element and...
+            li.textContent = "You have no tasks"
+        }
+
+        ul.appendChild(li)
 
         });
 

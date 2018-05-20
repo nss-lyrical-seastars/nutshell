@@ -5,6 +5,7 @@ const storage = require("../APIManager/activeUser")
 
 $(document).ready(function() {
     $("#mainPage").hide();
+
 });
 
 const welcomePage = function() {
