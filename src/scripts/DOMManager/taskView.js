@@ -5,86 +5,86 @@ const taskManager = require("../APIManager/tasksManager")
 const createTask = require("../DOMManager/createTask")
 const session = require("../APIManager/activeUser")
 
-const taskList = function(){
+const taskList = function () {
 
-    //Get the element with the id "tasks"
-    const parentEl = document.getElementById("tasks")
 
-    //Create a button for submitting a newtask
-    const newTaskBtn = document.createElement("button")
+        //Get the element with the id "tasks"
+        const parentEl = document.getElementById("tasks")
 
-    newTaskBtn.textContent = "New Task"
-    parentEl.appendChild(newTaskBtn)
+        //Create a button for submitting a newtask
+        const newTaskBtn = document.createElement("button")
 
-    //On button click the create task form opens
-    $(newTaskBtn).on("click", function(event){
-        console.log(event.currentTarget)
-        $(parentEl).empty()
-        createTask()
-    })
+        newTaskBtn.textContent = "New Task"
+        parentEl.appendChild(newTaskBtn)
 
-    //Create an unordered list element
-    const ul = document.createElement("ul")
+        //On button click the create task form opens
+        $(newTaskBtn).on("click", function (event) {
+            console.log(event.currentTarget)
+            $(parentEl).empty()
+            createTask()
+        })
 
-    //Append the ul element to the parent element with the id "tasks"
-    parentEl.appendChild(ul)
+        //Create an unordered list element
+        const ul = document.createElement("ul")
 
-    //create a list element and...
-    const li = document.createElement("li")
+        //Append the ul element to the parent element with the id "tasks"
+        parentEl.appendChild(ul)
 
-    //Get all tasks in the database then....
-    taskManager.getAllTasks().then(allTasks => {
+        //create a list element and...
+        const li = document.createElement("li")
 
-        //Clear any active users in session storage
-        //session.clearActiveUser("ActiveUser");
+        //Get all tasks in the database then....
+        taskManager.getAllTasks().then(allTasks => {
 
+            //Clear any active users in session storage
+            //session.clearActiveUser("ActiveUser");
         //Get active User
-         data = session.getActiveUser("ActiveUser")
+        data = session.getActiveUser("ActiveUser")
         console.log(data)
 
-        //loop thru all tasks in database, and for each task...
-        allTasks.forEach(task => {
+            //loop thru all tasks in database, and for each task...
+            allTasks.forEach(task => {
 
 
-            if (data.id === task.userId){
+                if (data.id === task.userId) {
 
 
-            const input = document.createElement("input")
-            input.type = "checkbox"
+                    const input = document.createElement("input")
+                    input.type = "checkbox"
 
-            li.appendChild(input)
+                    li.appendChild(input)
 
-            const a = document.createElement("a")
-            a.href = "#"
-            a.id = `${task.id}`
-            a.textContent =" " + task.task
+                    const a = document.createElement("a")
+                    a.href = "#"
+                    a.id = `${task.id}`
+                    a.textContent = " " + task.task
 
-            li.appendChild(a)
-            li.append(" " + task.estCompleteDate)
+                    li.appendChild(a)
+                    li.append(" " + task.estCompleteDate)
 
-            const taskDate = task.estCompleteDate
+                    const taskDate = task.estCompleteDate
 
-            }
-        //     if (data.id !== task.userId){
+                }
+                if (data.id !== task.userId) {
 
-        //     //create a list element and...
-        //     li.textContent = "You have no tasks"
-        // }
+                    //create a list element and...
+                    li.textContent = "You have no tasks"
+                }
 
-        ul.appendChild(li)
+                ul.appendChild(li)
 
-        });
+            });
 
-    //Create event handler to edit task
-    $("a").on("click", function(event){
-        console.log(event.currentTarget.id)
-        taskManager.getSingleTasks(event.currentTarget.id)
-        $(parentEl).empty()
-        createTask(event.currentTarget.id)
-    })
-        //Create event handler to change input from "unchecked to "checked"
+            //Create event handler to edit task
+            $("a").on("click", function (event) {
+                console.log(event.currentTarget.id)
+                taskManager.getSingleTasks(event.currentTarget.id)
+                $(parentEl).empty()
+                createTask(event.currentTarget.id)
+            })
+            //Create event handler to change input from "unchecked to "checked"
 
-    })
+        })
 
 }
 
