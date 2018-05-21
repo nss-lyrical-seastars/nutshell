@@ -2,7 +2,7 @@
 //Author:  Erin Agobert
 const $ = require("jquery")
 const taskManager = require("../APIManager/tasksManager")
-const createTask = require("../DOMManager/createTask")
+
 const session = require("../APIManager/activeUser")
 
 const taskList = function () {
@@ -20,6 +20,7 @@ const taskList = function () {
         //On button click the create task form opens
         $(newTaskBtn).on("click", function (event) {
             console.log(event.currentTarget)
+            const createTask = require("../DOMManager/createTask")
             $(parentEl).empty()
             createTask()
         })
@@ -46,7 +47,7 @@ const taskList = function () {
             allTasks.forEach(task => {
 
 
-                if (data.id === task.userId) {
+                if (data.id === task.userId || data.id === "task.userId") {
 
 
                     const input = document.createElement("input")
@@ -65,7 +66,7 @@ const taskList = function () {
                     const taskDate = task.estCompleteDate
 
                 }
-                if (data.id !== task.userId) {
+                if (data.id !== task.userId || data.id === "task.userId") {
 
                     //create a list element and...
                     li.textContent = "You have no tasks"
