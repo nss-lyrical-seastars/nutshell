@@ -51,8 +51,6 @@ const welcomePage = function () {
             // Setting flag variable to false
             let userAuthenticated = false;
             // Loop over all users to see if input matches an existing user
-            // console.log(allUsers)
-            // debugger
             allUsers.forEach(user => {
                 if (user.username === userNameInput.value && user.email === userEmailInput.value) {
 
