@@ -18,8 +18,11 @@ const welcomePage = function () {
     const userEmailInput = document.createElement("input");
     userEmailInput.id = "userEmailID"
     userEmailInput.type = "text"
+    userEmailInput.type = "email";
+    userEmailInput.pattern = "/\S+@\S+/";
     // e-mail placeholder
     userEmailInput.placeholder = "E-mail"
+
     // append to  div
     fragment.appendChild(userEmailInput)
 
