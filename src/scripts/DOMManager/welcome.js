@@ -22,6 +22,7 @@ const welcomePage = function () {
     userEmailInput.id = "userEmailID"
     userEmailInput.type = "text"
     userEmailInput.type = "email";
+    // e-mail must have @
     userEmailInput.pattern = "/\S+@\S+/";
     // e-mail placeholder
     userEmailInput.placeholder = "E-mail"
@@ -50,23 +51,30 @@ const welcomePage = function () {
             // Setting flag variable to false
             let userAuthenticated = false;
             // Loop over all users to see if input matches an existing user
+            // console.log(allUsers)
+            // debugger
             allUsers.forEach(user => {
                 if (user.username === userNameInput.value && user.email === userEmailInput.value) {
 
                     // Matching user so set flag variable to true
                     userAuthenticated = true;
                     $("#welcomePage").hide();
-                   $("#mainPage").show();
+                    $("#mainPage").show();
                     dashboard()
                     session.saveActiveUser(user);
-
+                    // E-mail Validate
+                } else if (user.username === userNameInput.value && user.email !== userEmailInput.value) {
+                    swal("", "Not a valid e-mail. Please try again.", "error");
+                    // Username Validate
+                } else if (user.username !== userNameInput.value && user.email === userEmailInput.value){
+                    swal("", "Not a valid user. Please try again.", "error");
                 }
             })
             // Flag variable is still false if there was no match
-            if (!userAuthenticated) {
-                // Warn user with sweet alert
-                swal("", "Email or Username did not match. Please try again.", "error");
-            }
+            // if (!userAuthenticated) {
+            //     // Warn user with sweet alert
+            //     swal("", "Email or Username did not match. Please try again.", "error");
+            // }
         })
     };
 
