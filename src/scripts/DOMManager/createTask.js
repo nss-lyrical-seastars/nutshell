@@ -1,6 +1,8 @@
 // Purpose create task view.
 // Authors: Dejan Stjepanovic, Erin Agobert
 const taskManager = require("../APIManager/tasksManager")
+const dashboard = require("../DOMManager/dashboard")
+const session = require("../APIManager/activeUser")
 
 
 
@@ -42,20 +44,22 @@ submit.textContent = "Submit Task"
 submit.onclick = function (event) {
     console.log(event)
 
-    const task = {
+    const activeUser = session.getActiveUser()
 
-         "userId": 5,
-         "task":createTaskName.value,
-         "exCompleteDate": createTaskDate.value,
-         "complete": false
-    }
+    const tasks = {
 
-    taskManager.createTasks(task)
+        userId: activeUser.id,
+        task: createTaskName.value,
+        estCompleteDate: createTaskDate.value,
+        complete: false
+   }
+   //JSON.parse("tasks")
+    taskManager.createTasks(tasks)
 
-    const taskList = require("../DOMManager/taskView")
+    //const taskList = require("../DOMManager/taskView")
     //Return to main page on submit
     $("#createTasks").empty()
-        taskList()
+        dashboard()
 }
 fragment.appendChild(submit)
 

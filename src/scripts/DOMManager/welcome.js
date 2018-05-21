@@ -1,6 +1,9 @@
 const fragment = document.createDocumentFragment();
 const usersManager = require("../APIManager/userManager");
 const $ = require("jquery");
+const userManager = require("../APIManager/userManager")
+const session = require("../APIManager/activeUser")
+const dashboard = require("../DOMManager/dashboard")
 
 $(document).ready(function () {
     $("#mainPage").hide();
@@ -49,10 +52,14 @@ const welcomePage = function () {
             // Loop over all users to see if input matches an existing user
             allUsers.forEach(user => {
                 if (user.username === userNameInput.value && user.email === userEmailInput.value) {
+
                     // Matching user so set flag variable to true
                     userAuthenticated = true;
                     $("#welcomePage").hide();
-                    $("#mainPage").show();
+                   $("#mainPage").show();
+                    dashboard()
+                    session.saveActiveUser(user);
+
                 }
             })
             // Flag variable is still false if there was no match
@@ -91,6 +98,8 @@ const welcomePage = function () {
                     swal("", "Sweet! You're registered, come on in.", "success");
                     $("#welcomePage").hide();
                     $("#mainPage").show();
+                    dashboard()
+                    session.saveActiveUser();
                 });
 
                 request.fail(function (jqXHR, textStatus) {
