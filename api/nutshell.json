@@ -24,6 +24,11 @@
       "id": 5,
       "username": "John",
       "email": "John@gmail.com"
+    },
+    {
+      "username": "",
+      "email": "",
+      "id": 6
     }
   ],
   "Messages": [
@@ -67,6 +72,14 @@
       "title": "Mark McGwire Claims He Would Have Hit 70 Home Runs Without Help Of Bat",
       "synopsis": "Mark McGwire doesn't need a bat. All he needs is top notch steriods",
       "timeStamp": 1301090454
+    },
+    {
+      "userId": "3",
+      "url": "https://local.theonion.com/man-at-park-who-set-up-table-full-of-water-cups-has-no-1826124357",
+      "title": "Man At Park Who Set Up Table Full Of Water Cups Has No Idea How Passing Marathon Runners Got Impression They Can Take Them",
+      "synopsis": " “I came here like I do every weekend to enjoy a leisurely afternoon of sipping water from dozens of small cups, and all of a sudden these jerks in spandex start dashing through and stealing them,” said Evan Burdette, who confirmed that he didn’t go through the effort of erecting a folding table under his favorite tree and filling 30 or 40 Dixie cups from a nearby water fountain only to have them snatched away by a bunch of strangers.",
+      "timeStamp": "Mon May 21 2018 11:01:28 GMT-0500 (CDT)",
+      "id": 4
     }
   ],
   "Friends": [

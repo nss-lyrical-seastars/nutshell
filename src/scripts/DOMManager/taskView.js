@@ -33,7 +33,7 @@ const taskList = function(){
 
         //loop thru all tasks in database, and for each task...
         allTasks.forEach(task => {
-            console.log(task)
+            // console.log(task)
             //create a list element and...
             const li = document.createElement("li")
 
