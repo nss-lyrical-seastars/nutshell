@@ -28,8 +28,16 @@ const taskList = function () {
         //Create an unordered list element
         const ul = document.createElement("ul")
 
+<<<<<<< HEAD
+        //loop thru all tasks in database, and for each task...
+        allTasks.forEach(task => {
+            // console.log(task)
+            //create a list element and...
+            const li = document.createElement("li")
+=======
         //Append the ul element to the parent element with the id "tasks"
         parentEl.appendChild(ul)
+>>>>>>> 7a5a2381438ce327e50bed2a7299e1ee65abf7d6
 
         //Get all tasks in the database then....
         taskManager.getAllTasks().then(allTasks => {

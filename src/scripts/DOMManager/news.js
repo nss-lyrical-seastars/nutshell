@@ -34,11 +34,27 @@ function displayNewsInput () {
 
     const buttonSaveArticle = document.createElement("button");
         buttonSaveArticle.type = "button";
+        buttonSaveArticle.id = "buttonSave"
         buttonSaveArticle.textContent = "Save"
+        buttonSaveArticle.onclick = function (event) {
+            console.log(event);
+            const titleInput = document.getElementById("newsInput1").value;
+            const synopsisInput = document.getElementById("newsInput2").value;
+            const urlInput = document.getElementById("newsInput3").value;
+            const dateNews = new Date();
+
+            newsManager.createNews(urlInput, titleInput, synopsisInput, dateNews);
+
+
+        }
+
+
         newsDiv.appendChild(buttonSaveArticle);
+
 }
 
 buttonNewArticle.addEventListener("click", displayNewsInput);
+
 
 // News Div to display saved articles
 
@@ -72,10 +88,7 @@ newsManager.getAllNews().then(allNews => {
         buttDeleteNews.type = "button";
         buttDeleteNews.textContent = "Delete Article";
         divEachArticle.appendChild(buttDeleteNews);
-
-
     });
-
 })
 
 
@@ -95,4 +108,6 @@ newsManager.getAllNews().then(allNews => {
 //    console.log(newNews);
 //    }
 // )
+
+
 

@@ -16,11 +16,18 @@ const newsManager = Object.create(null, {
     },
     // post (create) news
     createNews: {
-        value: function (News) {
+        value: function (url, title, synopsis, date) {
             return $.ajax({
                 url: "http://localhost:8088/News",
                 method: "POST",
-                data: News
+                data: {
+                    "userId": 3,
+                        "url": url,
+                        "title": title,
+                        "synopsis": synopsis,
+                        "timeStamp": date
+
+                }
 
             })
         }
