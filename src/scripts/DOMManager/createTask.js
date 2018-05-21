@@ -50,6 +50,7 @@ submit.onclick = function (event) {
          "complete": false
     }
 
+    JSON.parse(task)
     taskManager.createTasks(task)
 
     const taskList = require("../DOMManager/taskView")
