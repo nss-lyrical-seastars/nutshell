@@ -53,7 +53,7 @@ submit.onclick = function (event) {
         estCompleteDate: createTaskDate.value,
         complete: false
    }
-   JSON.parse(tasks)
+   //JSON.parse("tasks")
     taskManager.createTasks(tasks)
 
     //const taskList = require("../DOMManager/taskView")

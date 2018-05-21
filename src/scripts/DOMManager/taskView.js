@@ -31,9 +31,6 @@ const taskList = function () {
         //Append the ul element to the parent element with the id "tasks"
         parentEl.appendChild(ul)
 
-        //create a list element and...
-        const li = document.createElement("li")
-
         //Get all tasks in the database then....
         taskManager.getAllTasks().then(allTasks => {
 
@@ -47,9 +44,10 @@ const taskList = function () {
             allTasks.forEach(task => {
 
 
-                if (data.id === task.userId || data.id === "task.userId") {
+                if (parseInt(data.id) === parseInt(task.userId)) {
 
-
+        //create a list element and...
+        const li = document.createElement("li")
                     const input = document.createElement("input")
                     input.type = "checkbox"
 
@@ -64,28 +62,31 @@ const taskList = function () {
                     li.append(" " + task.estCompleteDate)
 
                     const taskDate = task.estCompleteDate
-
-                }
-                if (data.id !== task.userId || data.id === "task.userId") {
-
-                    //create a list element and...
-                    li.textContent = "You have no tasks"
+                    ul.appendChild(li)
                 }
 
-                ul.appendChild(li)
 
             });
 
-            //Create event handler to edit task
-            $("a").on("click", function (event) {
-                console.log(event.currentTarget.id)
-                taskManager.getSingleTasks(event.currentTarget.id)
-                $(parentEl).empty()
-                createTask(event.currentTarget.id)
-            })
-            //Create event handler to change input from "unchecked to "checked"
+            // //Create event handler to edit task
+            // $("a").on("click", function (event) {
+            //     console.log(event.currentTarget.id)
+            //     taskManager.getSingleTasks(event.currentTarget.id)
+            //     $(parentEl).empty()
+            //     createTask(event.currentTarget.id)
+            // })
+            // //Create event handler to change input from "unchecked to "checked"
 
         })
+
+        if (parentEl.hasChildNodes() === false) {
+                    //create a list element and...
+        const li = document.createElement("li")
+            //create a list element and...
+            li.textContent = "You have no tasks"
+            ul.appendChild(li)
+        }
+
 
 }
 
