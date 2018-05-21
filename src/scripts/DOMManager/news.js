@@ -72,10 +72,7 @@ newsManager.getAllNews().then(allNews => {
         buttDeleteNews.type = "button";
         buttDeleteNews.textContent = "Delete Article";
         divEachArticle.appendChild(buttDeleteNews);
-
-
     });
-
 })
 
 
